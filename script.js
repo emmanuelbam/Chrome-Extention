@@ -6,14 +6,17 @@ const inputBtn = document.getElementById("input-btn")
 const ulEl = document.getElementById(ul-el)
 inputBtn.addEventListener("click", function() {
    myLeads.push(inputEl.value)
-   console.log(myLeads)
+   renderLeads()
+   inputEl.value = ""
 }) 
+function renderLeads() {
+    let listItems = ""
+    for (let i = 0; i < myLeads.length; i++) {
+        listItems += "<li><a href='target'>" + myLeads[i] + "</a></li>"
+    }
+    ulEl.innerHTML = listItems
 
-for (let i = 0; i < myLeads.length; i++) {
-    ulEl.innerHTML += "<li>" + myLeads[i] + "</li>"
 }
-
-
 
 
 
